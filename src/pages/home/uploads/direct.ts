@@ -39,7 +39,7 @@ export const HttpDirectUpload: Upload = async (
   const uploadURL = uploadInfo.upload_url
   const method = uploadInfo.method || "PUT"
 
-  if (chunkSize > 0 && file.size > chunkSize) {
+  if (chunkSize > 0) {
     // Chunked upload
     return await uploadChunked(
       file,
